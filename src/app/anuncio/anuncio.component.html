@@ -1,1 +1,49 @@
-<p>anuncio works!</p>
+<div class="row">
+  <div class="col-8 m-auto">
+     <form  [formGroup]="formGroupAnuncio">
+       <div class="mb-3">
+         <label for="name" class="form-label">Nome: </label>
+         <input type="text" formControlName="empresa" class="form-control" id="name" placeholder="Nome">
+       </div>
+
+       <div class="mb-3">
+         <label for="email" class="form-label">Email: </label>
+         <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email">
+       </div>
+
+       <div class="mb-3">
+        <label for="style" class="form-label">estilo do anuncio: </label>
+        <input type="text" formControlName="style" class="form-control" id="style" placeholder="style">
+      </div>
+
+      <div class="mb-3">
+        <label for="style" class="form-label">Coloca a url ai: </label>
+        <input type="text" formControlName="style" class="form-control" id="style" placeholder="style">
+      </div>
+      <button class="btn btn-danger me-1">Salva ai</button>
+
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">Email</th>
+            <th scope="col">Estilo</th>
+              <th scope="col">url</th>
+            <th class="d-flex justify-content-end" scope="col">Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let anuncio of anuncio">
+            <th scope="row">{{anuncio.id}}</th>
+            <td>{{anuncio.empresa}}</td>
+            <td>{{anuncio.email}}</td>
+            <td>{{anuncio.url}}</td>
+            <td class="d-flex justify-content-end">
+              <button class="btn btn-danger me-1">Excluir</button>
+              <button class="btn btn-primary">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
